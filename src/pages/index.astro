@@ -1,0 +1,63 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+// 記事全件を取得し、order順に並び替え
+const posts = (await getCollection('posts')).sort(
+	(a, b) => a.data.order - b.data.order
+);
+
+const title = "文系ライターのための、0円で始めるAI×静的サイト構築ログ";
+const description = "技術知識ゼロの文系ライターが、AI（Vibe Coding）とAstroを駆使して、維持費0円で爆速の自分メディアを構築するための全記録。";
+---
+
+<Layout title={title} description={description}>
+	<section class="mb-16 text-center">
+		<h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-6 leading-tight">
+			{title}
+		</h1>
+		<p class="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
+			維持費0円。爆速表示。強固なセキュリティ。<br>
+			Astro × Cloudflare Pages × Vibe Codingで実現する、<br>
+			プロフェッショナルのための「書く場所」の作り方。
+		</p>
+	</section>
+
+  <img src="/images/banner-top.png" alt="Writer's Monolith" class="w-full md:w-1/2 mx-auto mb-16" />
+
+	<section>
+		<h2 class="text-xs font-bold uppercase tracking-widest text-gray-400 mb-8 text-center">Table of Contents</h2>
+		<div class="space-y-8">
+			{posts.map((post) => (
+				<article class="group relative bg-white border border-gray-100 hover:border-gray-300 transition-colors p-6 rounded-sm shadow-sm hover:shadow-md">
+					<div class="flex flex-col md:flex-row md:items-baseline gap-2 mb-2">
+						<span class="text-xs font-mono text-gray-400 uppercase tracking-wider shrink-0">
+							Chapter {post.data.order}
+						</span>
+						<h3 class="text-xl font-bold group-hover:text-monolith-dark transition-colors">
+							<a href={`/posts/${post.slug}/`}>
+								{post.data.title.replace(/^第\d+章：/, '')}
+							</a>
+						</h3>
+					</div>
+					<p class="text-gray-600 leading-relaxed mb-4">
+						{post.data.description}
+					</p>
+					<div class="text-right">
+						<span class="inline-block text-sm font-bold border-b border-black pb-0.5 group-hover:opacity-70 transition-opacity">
+							Read Logic &rarr;
+						</span>
+					</div>
+					<a href={`/posts/${post.slug}/`} class="absolute inset-0" aria-label={`Read ${post.data.title}`}></a>
+				</article>
+			))}
+		</div>
+	</section>
+	
+	<section class="mt-20 pt-10 border-t border-gray-100 text-center">
+		<p class="text-sm text-gray-500">
+			This site itself is a "Monolith". <br>
+			Built with Astro, Tailwind, and AI.
+		</p>
+	</section>
+</Layout>

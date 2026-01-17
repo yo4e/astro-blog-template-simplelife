@@ -1,0 +1,24 @@
+/* 日本語コメント: Tailwindの基本スタイル設定 */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 基本的なリセットとフォント設定 */
+@layer base {
+  html {
+    /* スムーズなスクロール */
+    scroll-behavior: smooth;
+    /* 文字のアンチエイリアス（読みやすさ向上） */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-monolith-white text-monolith-black antialiased;
+  }
+
+  /* 記事内のリンクのスタイル */
+  a {
+    @apply transition-colors duration-200;
+  }
+}

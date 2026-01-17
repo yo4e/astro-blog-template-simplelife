@@ -1,0 +1,47 @@
+---
+// 日本語コメント: SEO用のヘッドコンポーネント
+// 各ページで共通して読み込まれるメタタグを定義します。
+
+interface Props {
+  title: string;
+  description?: string;
+  image?: string;
+}
+
+const { 
+  title, 
+  description = "文系ライターのための、0円で始めるAI×静的サイト構築ログ。AstroとCloudflare Pagesで実現する維持費ゼロの最強構成。", 
+  image = "/og-placeholder.png" 
+} = Astro.props;
+
+// カノニカルURLの生成
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+---
+
+<!-- グローバルメタデータ -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<meta name="generator" content={Astro.generator} />
+
+<!-- カノニカルURL -->
+<link rel="canonical" href={canonicalURL} />
+
+<!-- 基本メタタグ -->
+<title>{title} | Writer's Monolith</title>
+<meta name="title" content={`${title} | Writer's Monolith`} />
+<meta name="description" content={description} />
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website" />
+<meta property="og:url" content={Astro.url} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={new URL(image, Astro.url)} />
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:url" content={Astro.url} />
+<meta property="twitter:title" content={title} />
+<meta property="twitter:description" content={description} />
+<meta property="twitter:image" content={new URL(image, Astro.url)} />

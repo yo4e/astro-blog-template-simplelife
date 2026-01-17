@@ -1,0 +1,21 @@
+<!DOCTYPE html><html lang="ja"> <head><!-- グローバルメタデータ --><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta name="generator" content="Astro v4.16.19"><!-- カノニカルURL --><link rel="canonical" href="https://example.com/posts/04-ai-actions/"><!-- 基本メタタグ --><title>第4章：【実践編】AIへの指示出し | Writer's Monolith</title><meta name="title" content="第4章：【実践編】AIへの指示出し | Writer's Monolith"><meta name="description" content="AIに「良い感じのデザインにして」と言ってはいけない。プロのライターが使うべき、構造的で的確なプロンプトの技術。"><!-- Open Graph / Facebook --><meta property="og:type" content="website"><meta property="og:url" content="https://example.com/posts/04-ai-actions/"><meta property="og:title" content="第4章：【実践編】AIへの指示出し"><meta property="og:description" content="AIに「良い感じのデザインにして」と言ってはいけない。プロのライターが使うべき、構造的で的確なプロンプトの技術。"><meta property="og:image" content="https://example.com/og-placeholder.png"><!-- Twitter --><meta property="twitter:card" content="summary_large_image"><meta property="twitter:url" content="https://example.com/posts/04-ai-actions/"><meta property="twitter:title" content="第4章：【実践編】AIへの指示出し"><meta property="twitter:description" content="AIに「良い感じのデザインにして」と言ってはいけない。プロのライターが使うべき、構造的で的確なプロンプトの技術。"><meta property="twitter:image" content="https://example.com/og-placeholder.png"><link rel="stylesheet" href="/_astro/index.DFRiwaWL.css"></head> <body class="flex flex-col min-h-screen bg-monolith-white text-monolith-black font-sans"> <header class="w-full border-b border-monolith-dark/10 bg-monolith-white/90 backdrop-blur-sm sticky top-0 z-50"> <div class="container mx-auto px-4 py-4 max-w-3xl flex justify-between items-center"> <a href="/" class="text-xl font-bold tracking-tight hover:opacity-70 transition-opacity">
+Writer's Monolith
+</a> <nav> <!-- 将来的なナビゲーション用 --> <a href="/about" class="text-sm text-gray-500 hover:text-black transition-colors">About</a> </nav> </div> </header> <!-- メインコンテンツ --> <!-- flex-growでフッターを最下部に押し下げる --> <!-- containerとmax-w-3xlで読みやすい幅に制限 --> <main class="flex-grow container mx-auto px-4 py-12 max-w-3xl">   <nav class="text-xs text-gray-500 mb-8 font-mono uppercase tracking-wider"> <a href="/" class="hover:text-black transition-colors">Home</a> &gt; Chapter 4 </nav> <article> <header class="mb-10"> <h1 class="text-3xl md:text-4xl font-bold leading-tight mb-4">第4章：【実践編】AIへの指示出し</h1> <p class="text-lg text-gray-600 leading-relaxed font-light">AIに「良い感じのデザインにして」と言ってはいけない。プロのライターが使うべき、構造的で的確なプロンプトの技術。</p> </header> <!-- 本文エリア: Tailwind Typography (prose) を適用 --> <div class="prose prose-lg max-w-none prose-headings:font-bold prose-headings:tracking-tight prose-a:text-black prose-a:no-underline prose-a:border-b prose-a:border-black/30 hover:prose-a:border-black prose-pre:bg-gray-900 prose-pre:text-gray-100"> <h2 id="4-1-サイト骨組みプロンプト">4-1. サイト骨組みプロンプト</h2>
+<p>AIにサイトを作らせるとき、最もやってはいけないのが「おしゃれなデザインにして」という指示です。
+「おしゃれ」の定義は曖昧すぎます。AIは混乱し、無難でつまらないデザインを出してきます。</p>
+<p>指示すべきは**「構造」**です。</p>
+<ul>
+<li>「白と黒の2色だけを使え」</li>
+<li>「文字サイズは16px以上、行間は1.8倍にしろ」</li>
+<li>「見出しの上には40pxの余白を取れ」</li>
+</ul>
+<p>このように、数値と論理で指示を出します。
+デザインセンスがない？ 大丈夫です。有名な出版物（雑誌や新聞）のレイアウトを真似させてください。彼らは読みやすさのプロです。</p>
+<h2 id="4-2-データ構造化jsonを活用した量産体制">4-2. データ構造化：JSONを活用した量産体制</h2>
+<p>記事が増えてきたら、Markdownファイルを1つずつ手動で作るのも面倒になります。
+そこでAIの出番です。</p>
+<p>「この記事の構成案を考えた。これをAstroのMarkdownフォーマット（Frontmatter付き）に変換して」</p>
+<p>こう指示すれば、AIは一瞬でファイルの中身を作ってくれます。
+あなたはそれをコピペするだけ。この「量産体制」こそが、Vibe Coding（AIとの共創）の真骨頂です。</p>
+<p>さあ、恐れることはありません。
+技術の壁は崩れ去りました。あとは、あなたの言葉を世界に届けるだけです。</p> </div> </article>  <nav class="mt-16 pt-8 border-t border-gray-100 flex justify-between text-sm"> <div> <a href="/posts/03-planning-automated/" class="group flex flex-col items-start"> <span class="text-gray-400 text-xs uppercase tracking-wider mb-1">&larr; Previous</span> <span class="font-bold group-hover:underline">第3章：【企画編】ほったらかしで勝つコンテンツ</span> </a> </div> <div class="text-right">  </div> </nav>  </main> <footer class="w-full py-8 text-center text-sm text-gray-500 border-t border-monolith-dark/10 mt-12"> <div class="container mx-auto px-4"> <p>&copy; 2026 Writer's Monolith. All rights reserved.</p> <p class="mt-2 text-xs opacity-70">Powered by Astro & Cloudflare Pages</p> </div> </footer> </body></html>
