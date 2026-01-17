@@ -8,6 +8,8 @@ import sitemap from '@astrojs/sitemap';
 export default defineConfig({
     // サイトのURL（本番環境に合わせて変更してください）
     // 構造化データ(JSON-LD)の生成などで使用されます。
+    // サイトのURL（本番環境に合わせて変更してください）
+    // まだドメインが決まっていないため、一時的なプレースホルダーにしています
     site: 'https://example.com',
 
     // インテグレーションの設定
@@ -18,6 +20,7 @@ export default defineConfig({
             applyBaseStyles: false,
         }),
         // サイトマップ(sitemap-index.xml)を自動生成
+        // ビルドエラー回避のため一時無効化
         // sitemap(),
     ],
     markdown: {
