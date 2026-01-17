@@ -35,9 +35,7 @@ const description = "技術知識ゼロの文系ライターが、AI（Vibe Codi
 							Chapter {post.data.order}
 						</span>
 						<h3 class="text-xl font-bold group-hover:text-monolith-dark transition-colors">
-							<a href={`/posts/${post.slug}/`}>
-								{post.data.title.replace(/^第\d+章：/, '')}
-							</a>
+							<span>{post.data.title.replace(/^第\d+章：/, '')}</span>
 						</h3>
 					</div>
 					<p class="text-gray-600 leading-relaxed mb-4">

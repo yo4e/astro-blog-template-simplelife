@@ -19,9 +19,37 @@ const allPosts = (await getCollection('posts')).sort((a, b) => a.data.order - b.
 const currentIndex = allPosts.findIndex(p => p.slug === post.slug);
 const prevPost = currentIndex > 0 ? allPosts[currentIndex - 1] : null;
 const nextPost = currentIndex < allPosts.length - 1 ? allPosts[currentIndex + 1] : null;
+
+const postUrl = new URL(`/posts/${post.slug}/`, Astro.site);
+const imageUrl = post.data.heroImage
+	? new URL(post.data.heroImage, Astro.site)
+	: null;
+const jsonLd = {
+	'@context': 'https://schema.org',
+	'@type': 'BlogPosting',
+	headline: post.data.title,
+	description: post.data.description,
+	datePublished: post.data.pubDate,
+	dateModified: post.data.updatedDate ?? post.data.pubDate,
+	author: {
+		'@type': 'Person',
+		name: "Writer's Monolith",
+	},
+	mainEntityOfPage: {
+		'@type': 'WebPage',
+		'@id': postUrl,
+	},
+	url: postUrl,
+	...(imageUrl ? { image: [imageUrl] } : {}),
+};
 ---
 
 <Layout title={post.data.title} description={post.data.description}>
+	<Fragment slot="head">
+		<script type="application/ld+json">
+			{JSON.stringify(jsonLd)}
+		</script>
+	</Fragment>
 	<!-- パンくずリスト (簡易) -->
 	<nav class="text-xs text-gray-500 mb-8 font-mono uppercase tracking-wider">
 		<a href="/" class="hover:text-black transition-colors">Home</a> &gt; Chapter {post.data.order}
