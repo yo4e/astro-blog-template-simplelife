@@ -16,7 +16,7 @@ order: 1
 
 1.  **Framework: [Astro](https://astro.build/)** (アストロ)
 2.  **Hosting: [Cloudflare Pages](https://pages.cloudflare.com/)** (クラウドフレア ページズ)
-3.  **Partner: Google Antigravity** (グーグル アンチグラビティ)
+3.  **Partner: [Google Antigravity](https://antigravity.google/)** (グーグル アンチグラビティ)
 
 「なんだか難しそう」と思いましたか？ 大丈夫です。これを「**家づくり**」に例えてみましょう。
 
