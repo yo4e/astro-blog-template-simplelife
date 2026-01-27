@@ -1,10 +1,11 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import { getCollection } from "astro:content";
+import { getCollection, type CollectionEntry } from "astro:content";
 
 // 記事全件を取得し、order順に並び替え
 const posts = (await getCollection("posts")).sort(
-	(a, b) => a.data.order - b.data.order,
+	(a: CollectionEntry<"posts">, b: CollectionEntry<"posts">) =>
+		a.data.order - b.data.order,
 );
 
 const title = "Simple Life Log";
@@ -29,7 +30,9 @@ const description =
 	<img
 		src="/images/hero.png"
 		alt="Simple Life Log"
-		class="w-full mx-auto mb-16 rounded-md shadow-md"
+		width="1200"
+		height="630"
+		class="w-full h-auto mx-auto mb-16 rounded-md shadow-md"
 	/>
 
 	<section>

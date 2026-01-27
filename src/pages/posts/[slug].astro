@@ -44,7 +44,14 @@ const jsonLd = {
 };
 ---
 
-<Layout title={post.data.title} description={post.data.description}>
+<Layout
+	title={post.data.title}
+	description={post.data.description}
+	image={post.data.heroImage}
+	ogType="article"
+	publishedTime={post.data.pubDate}
+	modifiedTime={post.data.updatedDate ?? post.data.pubDate}
+>
 	<Fragment slot="head">
 		<script type="application/ld+json">
 			{JSON.stringify(jsonLd)}
