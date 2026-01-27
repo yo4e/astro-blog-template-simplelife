@@ -2,6 +2,10 @@
 
 シンプルなAstro製ブログテンプレート（CMSなし）です。Markdownで記事を書き、静的サイトとして配布・運用できます。
 
+デモ: https://simplelife-log.pages.dev/
+
+![Preview](public/preview.png)
+
 ## 特徴
 - Astro + Tailwind CSS
 - 画像付きヒーローとシンプルな目次トップ
