@@ -10,7 +10,7 @@ export default defineConfig({
     // サイトのURL（本番環境に合わせて変更してください）
     // 構造化データ(JSON-LD)の生成などで使用されます。
     // まだドメインが決まっていないため、一時的なプレースホルダーにしています
-    site: 'https://simple-life-log.com',
+    site: 'https://simplelife-log.pages.dev',
 
     // インテグレーションの設定
     integrations: [

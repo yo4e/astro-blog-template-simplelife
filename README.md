@@ -56,12 +56,17 @@ order: 1
 ## カスタマイズポイント
 
 ### サイト名 / 説明文
-- `src/components/Head.astro` の `Simple Life Log` と `description` を変更してください。
-- ページタイトルは `Layout` が `"{title} | サイト名"` 形式で出力します。
+- `src/consts.ts` を編集してください。
+  ```typescript
+  export const SITE_TITLE = 'Simple Life Log';
+  export const SITE_DESCRIPTION = '...';
+  ```
+- サイト全体（タイトル、メタタグ、ヘッダー、フッターなど）に反映されます。
 
 ### サイトURL
 - `astro.config.mjs` の `site` を本番URLに変更してください。
-  - Canonical / OG / Sitemap に使われます。
+  - 例: `https://your-site.pages.dev` など
+  - これを設定しないと、OG画像（SNSでシェアした時の画像）が正しく表示されません。
 
 ### 画像サイズ（CLS対策）
 - `src/pages/index.astro` のヒーロー画像に `width` / `height` を設定しています。

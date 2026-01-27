@@ -1,24 +1,21 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import { getCollection, type CollectionEntry } from "astro:content";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 
 // 記事全件を取得し、order順に並び替え
 const posts = (await getCollection("posts")).sort(
 	(a: CollectionEntry<"posts">, b: CollectionEntry<"posts">) =>
 		a.data.order - b.data.order,
 );
-
-const title = "Simple Life Log";
-const description =
-	"シンプルで豊かな暮らしを探求するブログ。断捨離、デジタルデトックス、マインドフルネスなど、心地よい毎日を送るためのヒントを発信します。";
 ---
 
-<Layout title={title} description={description}>
+<Layout title={SITE_TITLE} description={SITE_DESCRIPTION}>
 	<section class="mb-16 text-center">
 		<h1
 			class="text-4xl md:text-5xl font-bold tracking-tight mb-6 leading-tight"
 		>
-			{title}
+			{SITE_TITLE}
 		</h1>
 		<p class="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
 			Less is more.<br />
@@ -29,7 +26,7 @@ const description =
 
 	<img
 		src="/images/hero.png"
-		alt="Simple Life Log"
+		alt={SITE_TITLE}
 		width="1200"
 		height="630"
 		class="w-full h-auto mx-auto mb-16 rounded-md shadow-md"
