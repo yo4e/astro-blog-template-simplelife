@@ -71,4 +71,4 @@ order: 1
 - Cloudflare Pages などの静的ホスティングにそのままデプロイできます。
 
 ## ライセンス
-必要に応じて追記してください。
+MIT License
