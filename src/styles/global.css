@@ -21,4 +21,9 @@
   a {
     @apply transition-colors duration-200;
   }
+
+  /* キャプションのセンタリング */
+  figcaption {
+    @apply text-center text-sm text-gray-500 mt-2;
+  }
 }

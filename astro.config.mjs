@@ -1,6 +1,7 @@
 import { defineConfig } from 'astro/config';
 import tailwind from '@astrojs/tailwind';
 import sitemap from '@astrojs/sitemap';
+import rehypeFigure from 'rehype-figure';
 
 // 日本語コメント:
 // Astroの設定ファイルです。
@@ -8,9 +9,8 @@ import sitemap from '@astrojs/sitemap';
 export default defineConfig({
     // サイトのURL（本番環境に合わせて変更してください）
     // 構造化データ(JSON-LD)の生成などで使用されます。
-    // サイトのURL（本番環境に合わせて変更してください）
     // まだドメインが決まっていないため、一時的なプレースホルダーにしています
-    site: 'https://example.com',
+    site: 'https://simple-life-log.com',
 
     // インテグレーションの設定
     integrations: [
@@ -20,8 +20,7 @@ export default defineConfig({
             applyBaseStyles: false,
         }),
         // サイトマップ(sitemap-index.xml)を自動生成
-        // ビルドエラー回避のため一時無効化
-        // sitemap(),
+        sitemap(),
     ],
     markdown: {
         rehypePlugins: [
@@ -30,6 +29,12 @@ export default defineConfig({
                 {
                     target: '_blank',
                     rel: ['noopener', 'noreferrer']
+                }
+            ],
+            [
+                rehypeFigure,
+                {
+                    className: 'my-8',
                 }
             ],
         ],
