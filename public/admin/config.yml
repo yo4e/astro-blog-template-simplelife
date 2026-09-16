@@ -1,0 +1,26 @@
+# yaml-language-server: $schema=https://unpkg.com/@sveltia/cms/schema/sveltia-cms.json
+
+backend:
+  name: github
+  repo: yo4e/astro-blog-template-simplelife
+  branch: main
+  auth_methods: [token]
+
+media_folder: /public/images
+public_folder: /images
+
+collections:
+  - name: posts
+    label: 記事
+    label_singular: 記事
+    folder: /src/content/posts
+    create: true
+    extension: md
+    fields:
+      - { name: title, label: タイトル, widget: string }
+      - { name: description, label: 概要, widget: text }
+      - { name: pubDate, label: 公開日, widget: datetime, type: date }
+      - { name: updatedDate, label: 更新日, widget: datetime, type: date, required: false }
+      - { name: heroImage, label: アイキャッチ画像, widget: image, required: false }
+      - { name: order, label: 表示順, widget: number }
+      - { name: body, label: 本文, widget: markdown }
