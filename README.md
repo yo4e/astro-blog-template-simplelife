@@ -1,6 +1,6 @@
 # Simple Life Log – Astro Blog Template
 
-シンプルなAstro製ブログテンプレート（CMSなし）です。Markdownで記事を書き、静的サイトとして配布・運用できます。
+シンプルなAstro製ブログテンプレートです。Markdownを直接編集するCMSなし運用に加え、任意でSveltia CMSから記事を編集できます。
 
 デモ: https://simplelife-log.pages.dev/
 
@@ -37,7 +37,7 @@ npm run preview
 ## 記事の追加
 `src/content/posts/` に Markdown を追加します。Frontmatter は以下の通りです。
 
-CMSなし運用のため、このフォルダにMarkdownを追加してビルドすれば自動で記事が増えます。
+CMSを使わない場合は、このフォルダにMarkdownを追加してビルドすれば自動で記事が増えます。
 
 ```yaml
 ---
@@ -52,7 +52,6 @@ order: 1
 
 - `order` は目次での並び順に使われます。
 - `heroImage` はOG画像にも使用されます。
-
 
 ## Sveltia CMS（任意）
 
