@@ -8,7 +8,7 @@ import { SITE_TITLE } from "../consts";
   class="w-full border-b border-monolith-dark/10 bg-monolith-white/90 backdrop-blur-sm sticky top-0 z-50"
 >
   <div
-    class="container mx-auto px-4 py-4 max-w-3xl flex justify-between items-center"
+    class="container mx-auto px-4 py-4 max-w-3xl flex justify-between items-center gap-4"
   >
     <a
       href="/"
@@ -16,11 +16,18 @@ import { SITE_TITLE } from "../consts";
     >
       {SITE_TITLE}
     </a>
-    <nav class="flex gap-4 text-sm font-medium text-gray-600">
+    <nav class="flex items-center gap-3 text-sm font-medium text-gray-600">
       <a href="/about" class="hover:text-black transition-colors">About</a>
-      <a href="/privacy-policy" class="hover:text-black transition-colors"
-        >Privacy</a
+      <a href="/privacy-policy" class="hover:text-black transition-colors">
+        Privacy
+      </a>
+      <a
+        href="/admin/"
+        class="inline-flex items-center rounded-full border border-monolith-dark/20 px-3 py-1.5 text-monolith-black hover:bg-monolith-dark hover:text-white transition-colors"
+        aria-label="Sveltia CMSを開いて記事を投稿・編集する"
       >
+        投稿
+      </a>
     </nav>
   </div>
 </header>
